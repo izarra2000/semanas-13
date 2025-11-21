@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portafolio Personal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Botón Hamburguesa -->
+<div class="hamburger" id="hamburger">
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+
+<!-- Menú Lateral -->
+<nav id="sidebar">
+  <div class="logo">Mi Portafolio</div>
+  <ul class="menu" id="menu">
+    <li>
+      <a href="#" class="submenu-toggle">🏠 Inicio ▼</a>
+      <ul class="submenu">
+        <li><a href="ruc.html" target="_blank">RUC</a></li>
+        <li><a href="curiculo.html" target="_blank">Currículo</a></li>
+      </ul>
+    </li>
+
+    <li>
+      <a href="#" class="submenu-toggle">⚙️ MI PASATIEMPO▼</a>
+      <ul class="submenu">
+        <li><a href="deporte.html" target="_blank">musicas</a></li>
+     <li><a href="https://www.youtube.com/watch?v=yvb8zrW9MOs" target="_blank">Series</a></li>
+      </ul>
+    </li>
+
+    <li>
+      <a href="#" class="submenu-toggle">👥 SOBRE MI ▼</a>
+      <ul class="submenu">
+        <li><a href="#">Autobiografía</a></li>
+      </ul>
+    </li>
+
+    <li>
+      <a href="#" class="submenu-toggle">📞 Contacto ▼</a>
+      <ul class="submenu">
+        <li><a href="https://www.facebook.com/milusca.izarraareche.5" target="_blank">Facebook</a></li>
+    <li><a href="https://www.instagram.com/meluzcaizarra/" target="_blank">Instagram</a></li>
+    <li><a href="https://wa.me/51960642756" target="_blank">WhatsApp</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+<!-- Contenido Principal -->
+<main>
+  <section class="bienvenida">
+    <div class="overlay">
+      <h1>Bienvenido a mi portafolio</h1>
+      <p>Explora las secciones del menú lateral para conocer más sobre mí, mis servicios y redes sociales.</p>
+    </div>
+  </section>
+</main>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const sidebar = document.getElementById('sidebar');
+
+  hamburger.addEventListener('click', () => {
+    sidebar.classList.toggle('active');
+    hamburger.classList.toggle('active');
+  });
+
+  const submenuToggles = document.querySelectorAll('.submenu-toggle');
+  submenuToggles.forEach(toggle => {
+    toggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      const submenu = toggle.nextElementSibling;
+      submenu.classList.toggle('show');
+    });
+  });
+</script>
+
+</body>
+</html>
+
+
+

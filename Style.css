@@ -1,0 +1,286 @@
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    min-height: 100vh;
+    background-color: #f0f4f8;
+  }
+
+  /* ===== MENÚ LATERAL ===== */
+  nav {
+    background-color: #222831;
+    color: white;
+    width: 260px;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    overflow-y: auto;
+    transition: transform 0.3s ease;
+    box-shadow: 3px 0 10px rgba(0,0,0,0.4);
+  }
+
+  nav .logo {
+    text-align: center;
+    padding: 20px;
+    font-size: 1.4rem;
+    background-color: #393E46;
+    letter-spacing: 1px;
+    border-bottom: 1px solid #555;
+  }
+
+  nav ul {
+    list-style: none;
+  }
+
+  nav ul li {
+    position: relative;
+  }
+
+  nav ul li a {
+    display: block;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+    transition: background 0.3s;
+  }
+
+  nav ul li a:hover {
+    background-color: #00ADB5;
+  }
+
+  /* Submenús */
+  nav .submenu {
+    background-color: #393E46;
+    list-style: none;
+    display: none;
+  }
+
+  nav .submenu li a {
+    padding-left: 40px;
+    font-size: 0.95rem;
+  }
+
+  .submenu.show {
+    display: block;
+    animation: slideDown 0.3s ease;
+  }
+
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ===== BOTÓN HAMBURGUESA ===== */
+  .hamburger {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1001;
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+
+  .hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: #222;
+    margin: 4px 0;
+    transition: 0.4s;
+  }
+
+  .hamburger.active div:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+  .hamburger.active div:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active div:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+
+  /* ===== CONTENIDO ===== */
+  main {
+    margin-left: 260px;
+    padding: 40px;
+    flex: 1;
+    transition: margin-left 0.3s ease;
+  }
+
+  main h1 {
+    color: #00ADB5;
+    margin-bottom: 10px;
+  }
+
+  main p {
+    color: #333;
+    max-width: 600px;
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 768px) {
+    nav {
+      transform: translateX(-100%);
+    }
+
+    nav.active {
+      transform: translateX(0);
+    }
+
+    .hamburger {
+      display: flex;
+    }
+
+    main {
+      margin-left: 0;
+      padding-top: 60px;
+    }
+  }
+  * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  min-height: 100vh;
+  background-color: #f0f4f8;
+}
+
+/* ===== MENÚ LATERAL ===== */
+nav {
+  background-color: #222831;
+  color: white;
+  width: 260px;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  overflow-y: auto;
+  transition: transform 0.3s ease;
+  box-shadow: 3px 0 10px rgba(0, 0, 0, 0.4);
+}
+
+nav .logo {
+  text-align: center;
+  padding: 20px;
+  font-size: 1.4rem;
+  background-color: #393E46;
+  border-bottom: 1px solid #555;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav ul li a {
+  display: block;
+  padding: 15px 20px;
+  color: white;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  background-color: #00ADB5;
+}
+
+.submenu {
+  background-color: #393E46;
+  display: none;
+}
+
+.submenu.show {
+  display: block;
+}
+
+/* ===== BOTÓN HAMBURGUESA ===== */
+.hamburger {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 1001;
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background-color: #222;
+  margin: 4px 0;
+}
+
+/* ===== CONTENIDO PRINCIPAL ===== */
+main {
+  margin-left: 260px;
+  flex: 1;
+}
+
+/* ===== SECCIÓN BIENVENIDA CON FONDO ===== */
+.bienvenida {
+  position: relative;
+  height: 100vh;
+  background-image: url('IMAGEN/Imagen\ de\ WhatsApp\ 2025-10-14\ a\ las\ 09.49.43_00385a64.jpg'); /* <-- asegúrate que el nombre sea igual */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.bienvenida::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.overlay {
+  position: relative;
+  z-index: 1;
+  padding: 20px;
+}
+
+.overlay h1 {
+  font-size: 3rem;
+  color: #00ADB5;
+}
+
+.overlay p {
+  color: #eee;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  nav {
+    transform: translateX(-100%);
+  }
+
+  nav.active {
+    transform: translateX(0);
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  main {
+    margin-left: 0;
+  }
+}
+
+
+
+
